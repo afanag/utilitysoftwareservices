@@ -10,6 +10,9 @@ package mars.explorer.simulator;
  * @author Alfan Galmani
  */
 public class MarsExplorerSimulator {
+    
+    Explorer exp;
+    
 
     /**
      * @param args the command line arguments
