@@ -7,7 +7,6 @@ package mars.explorer.simulator;
 
 /**
  *
- * @author Alfan Galmani
  */
 public class Explorer {
     private int xAxis;
