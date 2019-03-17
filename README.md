@@ -20,3 +20,5 @@ MOVE X,Y
 REPORT
 
 To run project without IDE
+On Command Prompt 
+java -jar Mars_Explorer_Simulator.jar
