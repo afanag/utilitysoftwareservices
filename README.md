@@ -20,5 +20,10 @@ MOVE X,Y
 REPORT
 
 To run project without IDE
-On Command Prompt 
-java -jar Mars_Explorer_Simulator.jar
+Open File ~src/mars/explorer/simulator/MarsExplorerSimulator.java
+Remove package mars.explorer.simulator;
+
+Open Command Prompt 
+cd ~src/mars/explorer/simulator/
+javac MarsExplorerSimulator.java
+java MarsExplorerSimulator
