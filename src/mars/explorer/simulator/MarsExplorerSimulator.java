@@ -12,6 +12,43 @@ import java.util.Scanner;
  */
 public class MarsExplorerSimulator {
 
+    private class Explorer {
+
+        private int xAxis;
+        private int yAxis;
+        private String path;
+
+        public Explorer(int x, int y) {
+            xAxis = x;
+            yAxis = y;
+            path = null;
+        }
+
+        public int getxAxis() {
+            return xAxis;
+        }
+
+        public void setxAxis(int xAxis) {
+            this.xAxis = xAxis;
+        }
+
+        public int getyAxis() {
+            return yAxis;
+        }
+
+        public void setyAxis(int yAxis) {
+            this.yAxis = yAxis;
+        }
+
+        public String getPath() {
+            return path;
+        }
+
+        public void setPath(String path) {
+            this.path = path;
+        }
+
+    }
     Explorer exp;
     int boardSize = 5;
     boolean onBoard = false;
@@ -145,49 +182,12 @@ public class MarsExplorerSimulator {
             System.out.println("Choose any command to run OR write EXIT to "
                     + "close the application.");
             input = scanner.nextLine();
-            if(input.compareToIgnoreCase("EXIT") != 0)
+            if (input.compareToIgnoreCase("EXIT") != 0) {
                 m.getInput(input);
-            else
+            } else {
                 break;
+            }
         }
     }
 
-    public class Explorer {
-    private int xAxis;
-    private int yAxis;
-    private String path;
-    
-    public Explorer(int x, int y){
-        xAxis = x;
-        yAxis = y;
-        path = null;
-    }
-
-    public int getxAxis() {
-        return xAxis;
-    }
-
-    public void setxAxis(int xAxis) {
-        this.xAxis = xAxis;
-    }
-
-    public int getyAxis() {
-        return yAxis;
-    }
-
-    public void setyAxis(int yAxis) {
-        this.yAxis = yAxis;
-    }
-
-    public String getPath() {
-        return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
-    }
-       
 }
-
-}
-
