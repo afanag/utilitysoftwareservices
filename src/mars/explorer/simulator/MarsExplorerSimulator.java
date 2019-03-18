@@ -5,6 +5,8 @@
  */
 package mars.explorer.simulator;
 
+import java.util.Scanner;
+
 /**
  *
  */
@@ -44,7 +46,7 @@ public class MarsExplorerSimulator {
     /*
     Place Command
     Parameter: String (X,Y) Coordinate
-    */
+     */
     public void placeCommand(String in) {
         //Splits X nad Y coordinate
         String input[] = in.split(",");
@@ -67,7 +69,7 @@ public class MarsExplorerSimulator {
     /*
     Move Command
     Parameter: String (X,Y) Coordinate
-    */
+     */
     public void moveCommand(String in) {
         if (onBoard) {
             //Splits X nad Y coordinate
@@ -95,7 +97,7 @@ public class MarsExplorerSimulator {
                         } else {
                             currentX = currentX - 1;
                         }
-                        
+
                         exp.setxAxis(currentX);
                         exp.setPath(exp.getPath() + " (" + currentX + ","
                                 + currentY + ")");
@@ -106,7 +108,7 @@ public class MarsExplorerSimulator {
                         } else {
                             currentY = currentY - 1;
                         }
-                        
+
                         exp.setyAxis(currentY);
                         exp.setPath(exp.getPath() + " (" + currentX + ","
                                 + currentY + ")");
@@ -122,7 +124,7 @@ public class MarsExplorerSimulator {
 
     /*
     Report Command
-    */
+     */
     public void reportCommand() {
         if (onBoard) {
             System.out.println("P: (" + exp.getxAxis() + "," + exp.getyAxis()
@@ -134,16 +136,20 @@ public class MarsExplorerSimulator {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String input = "PLACE -2,0\n"
-                + "PLACE 1,3\n"
-                + "MOVE 2,1\n"
-                + "REPORT\n"
-                + "MOVE 2,4\n"
-                + "REPORT";
-
+        String input;
+        boolean run = true;
         MarsExplorerSimulator m = new MarsExplorerSimulator();
-        m.getInput(input);
+        Scanner scanner = new Scanner(System.in);
 
+        while (run) {
+            System.out.println("Choose any command to run OR write EXIT to "
+                    + "close the application.");
+            input = scanner.nextLine();
+            if(input.compareToIgnoreCase("EXIT") != 0)
+                m.getInput(input);
+            else
+                break;
+        }
     }
 
 }
